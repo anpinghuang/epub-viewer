@@ -1,0 +1,4 @@
+Flask==2.1.2
+ebooklib==0.18
+tempfile
+gunicorn==20.0.4

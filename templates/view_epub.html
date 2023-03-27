@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ title[0] }}</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          font-size: 16px;
+          line-height: 1.5;
+          color: #333;
+        }
+        h1, h2, h3, h4, h5, h6 {
+          font-family: Georgia, serif;
+          font-weight: bold;
+          color: #666;
+        }
+        p {
+          margin: 0 0 1em;
+        }
+        a {
+          color: #007bff;
+          text-decoration: none;
+        }
+        a:hover {
+          text-decoration: underline;
+        }
+        blockquote {
+          margin: 0 0 1em;
+          padding: 0 1em;
+          border-left: 3px solid #007bff;
+          color: #666;
+        }
+      </style>
+</head>
+<body>
+    {% for i, chapter in enumerate(chapters) %}
+        <h2>Chapter {{ i+1 }}</h2>
+        <p><a href="#chapter{{ i+1 }}">{{ title[0] }} - Chapter {{ i+1 }}</a></p>
+    {% endfor %}
+    {% for i, chapter in enumerate(chapters) %}
+        <h2 id="chapter{{ i+1 }}">Chapter {{ i+1 }} - {{ title[0] }}</h2>
+        {{ chapter|safe }}
+        <hr>
+    {% endfor %}
+</body>
+
+</html>
